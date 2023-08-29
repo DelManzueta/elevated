@@ -17,7 +17,7 @@ mongoose
 		useUnifiedTopology: true,
 	})
 	.then(() => {
-		console.log('Connected to MongoDB');
+		// console.log('Connected to MongoDB');
 	})
 	.catch((err) => {
 		console.error('An error occurred:', err);
@@ -29,6 +29,8 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-	console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+// 	console.log(`Server running on port ${PORT}`);
+// });
+
+module.exports = app;
