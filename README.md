@@ -5,7 +5,8 @@
 Elevated Spa & E-commerce Platform is a comprehensive solution that consists of
 two separate frontends (Spa & Services and E-commerce Shop) and a unified
 backend. The platform aims to simplify appointment booking, showcase available
-services, and provide an e-commerce experience for products.
+services, and provide an e-commerce experience for products. A future update
+will introduce a subscription-based service for personalized skincare products.
 
 ## Architecture
 
@@ -19,6 +20,7 @@ interactions, and communication with both frontends.
 -   `controllers/`: Logic for handling requests and responses.
 -   `models/`: Data models such as appointments, products, users.
 -   `routes/`: Routing information, defining endpoints.
+-   `tests/`: Jest test cases for models and routes.
 
 ### Frontend: SPA (Spa & Services)
 
@@ -55,9 +57,9 @@ common folder.
 
 ### Test-Driven Development (TDD)
 
-We will begin by writing tests to identify potential issues and ensure that the
-code meets the requirements. This approach helps in building robust and
-error-free code.
+We have initiated the Test-Driven Development approach by setting up Jest and
+writing the first test case for the Customer model in the User category. This
+approach helps in building robust and error-free code.
 
 ### Conclusion
 
@@ -67,3 +69,10 @@ for focused development and easier maintenance, while the unified backend
 ensures consistency and efficiency.
 
 ## Getting Started
+
+To get started with development, follow the instructions in the
+`Getting Started` section (to be added).
+
+---
+
+Feel free to add this updated content to your README file.
