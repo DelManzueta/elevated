@@ -288,3 +288,56 @@
     - Settings (theme, layout)
 
 **--------end--------**
+
+### Customer Schema
+
+1. **ID**: Unique identifier (auto-generated)
+2. **Name**: String
+3. **Email**: String (unique)
+4. **Password**: Encrypted String
+5. **Phone Number**: String
+6. **Address**: String
+7. **Date of Birth**: Date
+8. **Appointments**: Array of appointment IDs
+
+### Staff Schema
+
+1. **ID**: Unique identifier (auto-generated)
+2. **Name**: String
+3. **Email**: String (unique)
+4. **Password**: Encrypted String
+5. **Phone Number**: String
+6. **Position**: String (e.g., Therapist, Receptionist)
+7. **Work Schedule**: Object (days and hours)
+8. **Appointments**: Array of appointment IDs
+
+### Admin Schema
+
+1. **ID**: Unique identifier (auto-generated)
+2. **Name**: String
+3. **Email**: String (unique)
+4. **Password**: Encrypted String
+5. **Phone Number**: String
+6. **Role**: String (e.g., Manager, Owner)
+7. **Permissions**: Array of permissions (e.g., can delete users, can update
+   schedule)
+
+## Summary of Tonight's Progress
+
+Scope Refinement: We started by revisiting the project scope and decided to
+focus on functionality over testing for now.
+
+API Structure: We discussed the API structure and decided to work on the user
+profiles, specifically the customer profile.
+
+File Structure: Reviewed the existing file structure and identified the files we
+would be working on.
+
+Controller Logic: Implemented the basic controller logic for creating a customer
+profile in CustomerController.js.
+
+Routes: Built out the customerRoutes.js file to handle various CRUD operations
+for customer profiles.
+
+Server Setup: Reviewed the index.js file to ensure that it correctly imports and
+uses the customer routes.
