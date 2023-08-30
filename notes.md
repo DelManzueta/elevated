@@ -322,22 +322,31 @@
 7. **Permissions**: Array of permissions (e.g., can delete users, can update
    schedule)
 
-## Summary of Tonight's Progress
+Certainly! Here's a progress note that you can add to your README or a separate
+NOTES file:
 
-Scope Refinement: We started by revisiting the project scope and decided to
-focus on functionality over testing for now.
+---
 
-API Structure: We discussed the API structure and decided to work on the user
-profiles, specifically the customer profile.
+## Progress Update - [08/29/2023]
 
-File Structure: Reviewed the existing file structure and identified the files we
-would be working on.
+### Completed Tasks
 
-Controller Logic: Implemented the basic controller logic for creating a customer
-profile in CustomerController.js.
+1. **Scope Refinement**: Revisited the project scope to focus more on
+   functionality rather than testing at this stage.
+2. **API Structure**: Discussed and planned the API structure, specifically
+   focusing on user profiles, starting with customer profiles.
+3. **File Structure**: Reviewed the existing file structure to identify the
+   files that need to be worked on.
+4. **Controller Logic**: Implemented the basic logic for creating a new customer
+   profile in `CustomerController.js`.
+5. **Routes**: Created `customerRoutes.js` to handle CRUD operations for
+   customer profiles.
+6. **Server Setup**: Reviewed and updated `index.js` to ensure it correctly
+   imports and uses the customer routes.
 
-Routes: Built out the customerRoutes.js file to handle various CRUD operations
-for customer profiles.
+### Next Steps
 
-Server Setup: Reviewed the index.js file to ensure that it correctly imports and
-uses the customer routes.
+1. Complete the CRUD functionality for customer profiles.
+2. Implement validation and error handling.
+3. Extend the same CRUD and validation logic to staff and admin profiles.
+4. Begin work on the appointment scheduling functionality.
