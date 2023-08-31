@@ -322,9 +322,6 @@
 7. **Permissions**: Array of permissions (e.g., can delete users, can update
    schedule)
 
-Certainly! Here's a progress note that you can add to your README or a separate
-NOTES file:
-
 ---
 
 ## Progress Update - [08/29/2023]
