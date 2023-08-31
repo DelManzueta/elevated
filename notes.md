@@ -288,3 +288,82 @@
     - Settings (theme, layout)
 
 **--------end--------**
+
+### Customer Schema
+
+1. **ID**: Unique identifier (auto-generated)
+2. **Name**: String
+3. **Email**: String (unique)
+4. **Password**: Encrypted String
+5. **Phone Number**: String
+6. **Address**: String
+7. **Date of Birth**: Date
+8. **Appointments**: Array of appointment IDs
+
+### Staff Schema
+
+1. **ID**: Unique identifier (auto-generated)
+2. **Name**: String
+3. **Email**: String (unique)
+4. **Password**: Encrypted String
+5. **Phone Number**: String
+6. **Position**: String (e.g., Therapist, Receptionist)
+7. **Work Schedule**: Object (days and hours)
+8. **Appointments**: Array of appointment IDs
+
+### Admin Schema
+
+1. **ID**: Unique identifier (auto-generated)
+2. **Name**: String
+3. **Email**: String (unique)
+4. **Password**: Encrypted String
+5. **Phone Number**: String
+6. **Role**: String (e.g., Manager, Owner)
+7. **Permissions**: Array of permissions (e.g., can delete users, can update
+   schedule)
+
+---
+
+## Progress Update - [08/29/2023]
+
+### Completed Tasks
+
+1. **Scope Refinement**: Revisited the project scope to focus more on
+   functionality rather than testing at this stage.
+2. **API Structure**: Discussed and planned the API structure, specifically
+   focusing on user profiles, starting with customer profiles.
+3. **File Structure**: Reviewed the existing file structure to identify the
+   files that need to be worked on.
+4. **Controller Logic**: Implemented the basic logic for creating a new customer
+   profile in `CustomerController.js`.
+5. **Routes**: Created `customerRoutes.js` to handle CRUD operations for
+   customer profiles.
+6. **Server Setup**: Reviewed and updated `index.js` to ensure it correctly
+   imports and uses the customer routes.
+
+## Progress Update - [08/30/2023]
+
+-   **Admin Model**
+
+    -   Created `AdminController.js` to handle CRUD operations for Admin
+        profiles.
+    -   Implemented `AdminProfile.js` as the Mongoose schema for Admin.
+    -   Added `adminService.js` to abstract database operations for Admin.
+
+-   **Customer Model**
+
+    -   Completed `CustomerController.js` with full CRUD operations.
+    -   Reviewed and confirmed the Mongoose schema in `CustomerProfile.js`.
+    -   Added missing `customerService.js` to handle database operations for
+        Customer.
+
+-   **Staff Model**
+
+    -   Created `StaffController.js` for CRUD operations for Staff profiles.
+    -   Implemented `StaffProfile.js` as the Mongoose schema for Staff.
+    -   Added `staffService.js` to abstract database operations for Staff.
+
+-   **Routes**
+
+    -   Defined routes for Admin, Customer, and Staff in `adminRoutes.js`,
+        `customerRoutes.js`, and `staffRoutes.js` respectively.

@@ -6,6 +6,10 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 8888;
 
+const customerRoutes = require('./models/User/routes/customerRoutes');
+
+app.use('/api/customers', customerRoutes);
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -17,7 +21,7 @@ mongoose
 		useUnifiedTopology: true,
 	})
 	.then(() => {
-		// console.log('Connected to MongoDB');
+		console.log('Connected to MongoDB');
 	})
 	.catch((err) => {
 		console.error('An error occurred:', err);
@@ -29,8 +33,8 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-// app.listen(PORT, () => {
-// 	console.log(`Server running on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+	console.log(`Server running on port ${PORT}`);
+});
 
 module.exports = app;
