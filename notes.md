@@ -341,9 +341,29 @@
 6. **Server Setup**: Reviewed and updated `index.js` to ensure it correctly
    imports and uses the customer routes.
 
-### Next Steps
+## Progress Update - [08/30/2023]
 
-1. Complete the CRUD functionality for customer profiles.
-2. Implement validation and error handling.
-3. Extend the same CRUD and validation logic to staff and admin profiles.
-4. Begin work on the appointment scheduling functionality.
+-   **Admin Model**
+
+    -   Created `AdminController.js` to handle CRUD operations for Admin
+        profiles.
+    -   Implemented `AdminProfile.js` as the Mongoose schema for Admin.
+    -   Added `adminService.js` to abstract database operations for Admin.
+
+-   **Customer Model**
+
+    -   Completed `CustomerController.js` with full CRUD operations.
+    -   Reviewed and confirmed the Mongoose schema in `CustomerProfile.js`.
+    -   Added missing `customerService.js` to handle database operations for
+        Customer.
+
+-   **Staff Model**
+
+    -   Created `StaffController.js` for CRUD operations for Staff profiles.
+    -   Implemented `StaffProfile.js` as the Mongoose schema for Staff.
+    -   Added `staffService.js` to abstract database operations for Staff.
+
+-   **Routes**
+
+    -   Defined routes for Admin, Customer, and Staff in `adminRoutes.js`,
+        `customerRoutes.js`, and `staffRoutes.js` respectively.
