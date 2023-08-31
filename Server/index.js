@@ -6,13 +6,20 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 8888;
 
-const customerRoutes = require('./models/User/routes/customerRoutes');
-
-app.use('/api/customers', customerRoutes);
-
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Import routes
+const customerRoutes = require('./models/User/routes/customerRoutes');
+const staffRoutes = require('./models/User/routes/staffRoutes');
+const adminRoutes = require('./models/User/routes/adminRoutes');
+// const appointmentRoutes = require('./models/Appointment/routes/appointmentRoutes');
+// Use routes
+app.use('/api/customers', customerRoutes);
+app.use('/api/staff', staffRoutes);
+app.use('/api/admin', adminRoutes);
+// app.use('/api/appointments', appointmentRoutes);
 
 // Connect to MongoDB
 mongoose
@@ -27,7 +34,7 @@ mongoose
 		console.error('An error occurred:', err);
 	});
 
-// Routes
+// Default Route
 app.get('/', (req, res) => {
 	res.send('Welcome to Elevated Spa API');
 });

@@ -22,6 +22,33 @@ interactions, and communication with both frontends.
 -   `routes/`: Routing information, defining endpoints.
 -   `tests/`: Jest test cases for models and routes.
 
+#### API Endpoints:
+
+##### User Category
+
+-   **Customer Profile**
+
+    -   `POST /api/customers`: Create a new customer profile
+    -   `PUT /api/customers/:id`: Update a customer profile by ID
+    -   `GET /api/customers/:id`: Get a customer profile by ID
+    -   `GET /api/customers`: Get all customer profiles
+    -   `DELETE /api/customers/:id`: Delete a customer profile by ID
+
+-   **Staff Profile**
+
+    -   `POST /api/staff`: Create a new staff profile
+    -   `PUT /api/staff/:id`: Update a staff profile by ID
+    -   `GET /api/staff/:id`: Get a staff profile by ID
+    -   `GET /api/staff`: Get all staff profiles
+    -   `DELETE /api/staff/:id`: Delete a staff profile by ID
+
+-   **Admin Profile**
+    -   `POST /api/admin`: Create a new admin profile
+    -   `PUT /api/admin/:id`: Update an admin profile by ID
+    -   `GET /api/admin/:id`: Get an admin profile by ID
+    -   `GET /api/admin`: Get all admin profiles
+    -   `DELETE /api/admin/:id`: Delete an admin profile by ID
+
 ### Frontend: SPA (Spa & Services)
 
 This frontend showcases the spa and its services, facilitating appointment
@@ -72,7 +99,3 @@ ensures consistency and efficiency.
 
 To get started with development, follow the instructions in the
 `Getting Started` section (to be added).
-
----
-
-Feel free to add this updated content to your README file.
