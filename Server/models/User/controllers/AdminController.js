@@ -54,3 +54,24 @@ exports.getAllAdmins = async (req, res) => {
 		res.status(400).json({ message: error.message });
 	}
 };
+
+exports.resetAdminProfile = async (req, res) => {
+	try {
+		const resetAdmin = await adminService.resetAdminProfile(
+			req.params.id,
+			req.body
+		);
+		res.status(200).json(resetAdmin);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
+
+exports.searchAdminProfile = async (req, res) => {
+	try {
+		const admins = await adminService.searchAdminProfiles(req.query);
+		res.status(200).json(admins);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};

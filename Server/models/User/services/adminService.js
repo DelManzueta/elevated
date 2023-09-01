@@ -20,3 +20,11 @@ exports.getAdminById = async (id) => {
 exports.getAllAdmins = async () => {
 	return await Admin.find();
 };
+
+exports.resetAdminProfile = async (id, fieldsToReset) => {
+	return await Admin.findByIdAndUpdate(id, fieldsToReset, { new: true });
+};
+
+exports.searchAdminProfiles = async (query) => {
+	return await Admin.find(query);
+};

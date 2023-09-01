@@ -8,4 +8,7 @@ router.delete('/:id', staffController.deleteStaff);
 router.get('/:id', staffController.getStaffById);
 router.get('/', staffController.getAllStaff);
 
+router.get('/search', staffController.searchStaffProfile);
+router.post('/reset/:id', staffController.resetStaffProfile);
+
 module.exports = router;

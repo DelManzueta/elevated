@@ -21,6 +21,7 @@ interactions, and communication with both frontends.
 -   `models/`: Data models such as appointments, products, users.
 -   `routes/`: Routing information, defining endpoints.
 -   `tests/`: Jest test cases for models and routes.
+-   `auth/`: Authentication logic and routes.
 
 #### API Endpoints:
 
@@ -33,6 +34,8 @@ interactions, and communication with both frontends.
     -   `GET /api/customers/:id`: Get a customer profile by ID
     -   `GET /api/customers`: Get all customer profiles
     -   `DELETE /api/customers/:id`: Delete a customer profile by ID
+    -   `GET /api/customers/search`: Search for customer profiles
+    -   `POST /api/customers/reset/:id`: Reset a customer profile
 
 -   **Staff Profile**
 
@@ -41,6 +44,8 @@ interactions, and communication with both frontends.
     -   `GET /api/staff/:id`: Get a staff profile by ID
     -   `GET /api/staff`: Get all staff profiles
     -   `DELETE /api/staff/:id`: Delete a staff profile by ID
+    -   `GET /api/staff/search`: Search for staff profiles
+    -   `POST /api/staff/reset/:id`: Reset a staff profile
 
 -   **Admin Profile**
     -   `POST /api/admin`: Create a new admin profile
@@ -48,6 +53,30 @@ interactions, and communication with both frontends.
     -   `GET /api/admin/:id`: Get an admin profile by ID
     -   `GET /api/admin`: Get all admin profiles
     -   `DELETE /api/admin/:id`: Delete an admin profile by ID
+    -   `GET /api/admin/search`: Search for admin profiles
+    -   `POST /api/admin/reset/:id`: Reset an admin profile
+
+##### Authentication
+
+-   **Customer Auth**
+
+    -   `POST /api/auth/customer/register`: Register a new customer
+    -   `POST /api/auth/customer/login`: Login as a customer
+    -   `POST /api/auth/customer/verify-phone`: Verify phone number
+    -   `POST /api/auth/customer/logout`: Logout
+
+-   **Staff Auth**
+
+    -   `POST /api/auth/staff/register`: Register new staff
+    -   `POST /api/auth/staff/login`: Login as staff
+    -   `POST /api/auth/staff/verify-phone`: Verify phone number
+    -   `POST /api/auth/staff/approve`: Approve staff and issue company email
+    -   `POST /api/auth/staff/logout`: Logout
+
+-   **Admin Auth**
+    -   `POST /api/auth/admin/register`: Register new admin
+    -   `POST /api/auth/admin/login`: Login as admin
+    -   `POST /api/auth/admin/logout`: Logout
 
 ### Frontend: SPA (Spa & Services)
 

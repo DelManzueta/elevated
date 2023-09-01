@@ -20,3 +20,11 @@ exports.getStaffById = async (id) => {
 exports.getAllStaff = async () => {
 	return await Staff.find();
 };
+
+exports.resetStaffProfile = async (id, fieldsToReset) => {
+	return await Staff.findByIdAndUpdate(id, fieldsToReset, { new: true });
+};
+
+exports.searchStaffProfiles = async (query) => {
+	return await Staff.find(query);
+};

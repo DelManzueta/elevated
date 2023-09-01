@@ -63,3 +63,27 @@ exports.getAllCustomers = async (req, res) => {
 		res.status(400).json({ message: error.message });
 	}
 };
+
+exports.resetCustomerProfile = async (req, res) => {
+	try {
+		const resetCustomer = await customerService.resetCustomerProfile(
+			req.params.id,
+			req.body
+		);
+		res.status(200).json(resetCustomer);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
+
+// Search for customer profiles based on query parameters
+exports.searchCustomerProfile = async (req, res) => {
+	try {
+		const customers = await customerService.searchCustomerProfiles(
+			req.query
+		);
+		res.status(200).json(customers);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
