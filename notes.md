@@ -367,3 +367,43 @@
 
     -   Defined routes for Admin, Customer, and Staff in `adminRoutes.js`,
         `customerRoutes.js`, and `staffRoutes.js` respectively.
+
+#### Customer Endpoints
+
+-   Create: `POST /api/customers`
+-   Update: `PUT /api/customers/:id`
+-   Get by ID: `GET /api/customers/:id`
+-   Get All: `GET /api/customers`
+-   Delete: `DELETE /api/customers/:id`
+
+#### Staff Endpoints
+
+-   Create: `POST /api/staff`
+-   Update: `PUT /api/staff/:id`
+-   Get by ID: `GET /api/staff/:id`
+-   Get All: `GET /api/staff`
+-   Delete: `DELETE /api/staff/:id`
+
+#### Admin Endpoints
+
+-   Create: `POST /api/admin`
+-   Update: `PUT /api/admin/:id`
+-   Get by ID: `GET /api/admin/:id`
+-   Get All: `GET /api/admin`
+-   Delete: `DELETE /api/admin/:id`
+
+#### Appointment Endpoints
+
+-   Create: `POST /api/appointments`
+-   Update: `PUT /api/appointments/:id`
+-   Get by ID: `GET /api/appointments/:id`
+-   Get All: `GET /api/appointments`
+-   Delete: `DELETE /api/appointments/:id`
+
+#### Auth Endpoints
+
+-   Customer Login: `POST /api/auth/customer-login`
+-   Staff Login: `POST /api/auth/staff-login`
+-   Admin Login: `POST /api/auth/admin-login`
+-   Logout: `POST /api/auth/logout`
+-   Refresh: `POST /api/auth/refresh`

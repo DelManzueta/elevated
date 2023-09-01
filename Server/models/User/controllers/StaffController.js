@@ -54,3 +54,24 @@ exports.getAllStaff = async (req, res) => {
 		res.status(400).json({ message: error.message });
 	}
 };
+
+exports.resetStaffProfile = async (req, res) => {
+	try {
+		const resetStaff = await staffService.resetStaffProfile(
+			req.params.id,
+			req.body
+		);
+		res.status(200).json(resetStaff);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
+
+exports.searchStaffProfile = async (req, res) => {
+	try {
+		const staff = await staffService.searchStaffProfiles(req.query);
+		res.status(200).json(staff);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
