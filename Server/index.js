@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const passport = require('passport');
 require('dotenv').config();
 
+// Initialize the app
 const app = express();
 const PORT = process.env.PORT || 8888;
 
@@ -10,16 +12,24 @@ const PORT = process.env.PORT || 8888;
 app.use(cors());
 app.use(express.json());
 
+// Import and register the User model
+const User = require('./src/models/User');
+
+// Initialize Passport for authentication
+require('./src/auth/JwtStrategy')(passport); // Importing JWT strategy
+app.use(passport.initialize());
+
 // Import routes
-const customerRoutes = require('./models/User/routes/customerRoutes');
-const staffRoutes = require('./models/User/routes/staffRoutes');
-const adminRoutes = require('./models/User/routes/adminRoutes');
-// const appointmentRoutes = require('./models/Appointment/routes/appointmentRoutes');
+const customerRoutes = require('./src/routes/CustomerRoutes');
+const staffRoutes = require('./src/routes/StaffRoutes');
+const adminRoutes = require('./src/routes/AdminRoutes');
+const authRoutes = require('./src/routes/AuthRoutes'); // Importing authentication routes
+
 // Use routes
 app.use('/api/customers', customerRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/api/admin', adminRoutes);
-// app.use('/api/appointments', appointmentRoutes);
+app.use('/api/auth', authRoutes); // Using authentication routes
 
 // Connect to MongoDB
 mongoose

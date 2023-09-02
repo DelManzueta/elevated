@@ -407,3 +407,59 @@
 -   Admin Login: `POST /api/auth/admin-login`
 -   Logout: `POST /api/auth/logout`
 -   Refresh: `POST /api/auth/refresh`
+
+##\*\*AUTHENTICATION\*\*
+
+### Customer:
+
+1. **Authentication Options**: Gmail, Apple ID, or personal email.
+2. **Additional Verification**: Phone number verification through a short code
+   sent via text.
+3. **Calendar Integration**: Google Calendars for Gmail users and Apple's native
+   calendar for Apple ID users.
+4. **Routes**:
+    - `/api/auth/customer/register`
+    - `/api/auth/customer/login`
+    - `/api/auth/customer/verify-phone`
+    - `/api/auth/customer/logout`
+
+### Staff:
+
+1. **Authentication Options**: Personal email initially, then switched to a
+   company email upon approval.
+2. **Additional Verification**: Phone number verification.
+3. **Routes**:
+    - `/api/auth/staff/register`
+    - `/api/auth/staff/login`
+    - `/api/auth/staff/verify-phone`
+    - `/api/auth/staff/approve` (Admin route to approve staff and issue company
+      email)
+    - `/api/auth/staff/logout`
+
+### Admin:
+
+1. **Authentication Options**: Gmail or personal email.
+2. **Routes**:
+    - `/api/auth/admin/register`
+    - `/api/auth/admin/login`
+    - `/api/auth/admin/logout`
+
+### Shared Routes:
+
+-   `/api/auth/refresh-token`
+-   `/api/auth/forgot-password`
+-   `/api/auth/reset-password`
+-   `/api/auth/change-password`
+
+### Additional Features:
+
+-   **Google Calendar Integration**: For customers and staff using Gmail.
+-   **Apple Calendar Integration**: For customers using Apple ID.
+
+### Security Measures:
+
+-   **JWT for Stateless Authentication**: Useful for scalable applications.
+-   **OAuth 2.0 for Google and Apple Sign-In**: To allow sign-in via Gmail and
+    Apple ID.
+-   **Phone Number Verification**: For an extra layer of security and
+    appointment confirmations.
