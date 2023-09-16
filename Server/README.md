@@ -1,4 +1,81 @@
-### Elevated Spa API
+# Elevated Spa API
+
+## Introduction
+
+Welcome to the Elevated Spa API repository. This API serves as the backbone for
+the Elevated Spa application, a comprehensive platform for spa management. The
+API handles everything from user authentication and profile management to
+inventory control and analytics.
+
+## Installation and Setup
+
+To get started with the Elevated Spa API, follow these steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/elevated-spa/elevated-spa-api.git
+
+# Navigate to the server directory
+cd server
+
+# Install dependencies
+npm install
+
+# Start the server
+npm start
+```
+
+## Authentication
+
+Authentication is a crucial part of our API. We use JWT for authentication. To
+authenticate your requests, use the following endpoints:
+
+-   [POST] `/api/auth/signup`
+-   [POST] `/api/auth/login`
+
+## API Endpoints
+
+### Users
+
+#### Customer_Profile
+
+-   [POST] `/api/customers`
+    -   **Request**:
+        `{ "email": "example@email.com", "password": "password123" }`
+    -   **Response**: `{ "token": "jwt_token_here" }`
+-   [GET] `/api/customers/:id`
+-   [PUT] `/api/customers/:id`
+-   [DELETE] `/api/customers/:id`
+
+... (continue with other endpoints as listed in your original README)
+
+## Error Codes
+
+Here are some common HTTP status codes you might encounter while using the API:
+
+-   `400`: Bad Request - Your request is invalid.
+-   `401`: Unauthorized - Your API key is wrong.
+-   `403`: Forbidden - The kitten requested is hidden for administrators only.
+-   `404`: Not Found - The specified kitten could not be found.
+-   `500`: Internal Server Error - We had a problem with our server. Try again
+    later.
+
+## Production Notes
+
+-   Replace `console.error` with a more robust logging solution for better error
+    tracking.
+-   Replace `localhost` URLs in email verification with production URLs.
+
+## Contributing
+
+We welcome contributions from everyone. If you're interested in contributing,
+please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of
+conduct and the process for submitting pull requests.
+
+---
+
+Feel free to adapt this README to better suit the specific needs and nuances of
+your project.
 
 #### Users
 

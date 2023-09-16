@@ -2,28 +2,30 @@
 
 ## Overview
 
-Elevated Spa & E-commerce Platform is a comprehensive solution that consists of
-two separate frontends (Spa & Services and E-commerce Shop) and a unified
-backend. The platform aims to simplify appointment booking, showcase available
-services, and provide an e-commerce experience for products. A future update
-will introduce a subscription-based service for personalized skincare products.
+Elevated Spa & E-commerce Platform offers a seamless experience that combines
+spa services and e-commerce functionalities. The platform is designed to
+simplify appointment bookings, showcase available services, and provide an
+online shopping experience for skincare products. Future updates will introduce
+subscription-based services for personalized skincare solutions.
 
 ## Architecture
 
 ### Backend (API)
 
-Built with Node.js and MongoDB, the backend handles business logic, database
-interactions, and communication with both frontends.
+The backend is built using Node.js and MongoDB and serves as the central hub for
+business logic, database interactions, and communication with both frontends.
 
-#### Directory Structure:
+#### Directory Structure
 
--   `controllers/`: Logic for handling requests and responses.
--   `models/`: Data models such as appointments, products, users.
--   `routes/`: Routing information, defining endpoints.
--   `tests/`: Jest test cases for models and routes.
--   `auth/`: Authentication logic and routes.
+-   `controllers/`: Houses the logic for handling API requests and responses.
+-   `models/`: Defines the data models, such as User, Appointment, Product, etc.
+-   `routes/`: Contains the API endpoints.
+-   `tests/`: Includes Jest test cases for models and routes.
+-   `auth/`: Manages authentication logic and routes.
+-   `utils/`: Utility functions and middleware.
+-   `config/`: Configuration files and environment variables.
 
-#### API Endpoints:
+#### API Endpoints
 
 ##### User Category
 
@@ -88,43 +90,71 @@ setup.
 -   `pages/`: Main pages including Home, About, Services, Appointments, Gift
     Cards, Policies.
 
+### Frontend: SPA (Spa & Services)
+
+This frontend focuses on showcasing the spa and its services, and it facilitates
+appointment bookings.
+
+#### Directory Structure
+
+-   `pages/`: Main pages including Home, About, Services, Appointments, Gift
+    Cards, Policies, etc.
+-   `components/`: Reusable UI components.
+-   `assets/`: Static files like images and stylesheets.
+
 ### Frontend: Ecomm (E-commerce Shop)
 
-This frontend manages the e-commerce part, including product listings.
+This frontend is dedicated to the e-commerce aspect, including product listings,
+cart management, and user accounts.
 
-#### Directory Structure:
+#### Directory Structure
 
--   `pages/`: Main pages including Home, Products, Cart, Account.
+-   `pages/`: Main pages including Home, Products, Cart, Account, etc.
+-   `components/`: Reusable UI components.
+-   `assets/`: Static files like images and stylesheets.
 
 ### Communication
 
-The API exposes specific endpoints for both frontends, allowing interaction with
-the backend.
+Both frontends communicate with the backend through specific API endpoints:
 
--   **SPA Frontend**: Fetches services, books appointments.
--   **Ecomm Frontend**: Manages products, cart, user accounts.
+-   **SPA Frontend**: Fetches available services and manages appointment
+    bookings.
+-   **Ecomm Frontend**: Manages product listings, shopping cart, and user
+    accounts.
 
 ### Shared Components
 
-Shared components or functionalities can be managed in a shared library or
+Shared UI components or functionalities can be managed in a shared library or a
 common folder.
 
 ## Development Approach
 
 ### Test-Driven Development (TDD)
 
-We have initiated the Test-Driven Development approach by setting up Jest and
-writing the first test case for the Customer model in the User category. This
-approach helps in building robust and error-free code.
+We follow the Test-Driven Development (TDD) approach, facilitated by Jest for
+writing test cases. This ensures robust, error-free code and simplifies
+debugging.
 
-### Conclusion
+### Security
 
-The architecture is designed to keep the spa and ecomm sections separate but
-unified through a common backend. By keeping the frontends separate, it allows
-for focused development and easier maintenance, while the unified backend
-ensures consistency and efficiency.
+We prioritize security by implementing JWT-based authentication, rate limiting,
+and data validation. For production, consider replacing `console.error` with a
+more robust logging solution.
+
+### Contributors
+
+-   Lead: `Del M.`
+-   Backend Developer:
+-   Frontend Developer:
+-   QA Engineer:
+
+## Conclusion
+
+The architecture is modular, separating the spa and e-commerce functionalities
+into distinct frontends while maintaining a unified backend. This allows for
+focused development and easier maintenance.
 
 ## Getting Started
 
-To get started with development, follow the instructions in the
-`Getting Started` section (to be added).
+To get started with development, please refer to the `Getting Started` section
+(to be added).
