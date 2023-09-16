@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
 		enum: ['customer', 'staff', 'admin'],
 		default: 'customer',
 	},
+	isVerified: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 module.exports = mongoose.model('User', UserSchema);
