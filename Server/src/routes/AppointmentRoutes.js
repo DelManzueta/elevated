@@ -12,15 +12,29 @@ const appointmentMockData = path.join(
 	'appointments.json'
 );
 
+// Function to check if a staff member is available
+const isStaffAvailable = (staffID, date, time, appointments) => {
+	return !appointments.some(
+		(appt) =>
+			appt.staffID === staffID && appt.date === date && appt.time === time
+	);
+};
+
 router.post('/bookAppointment', (req, res) => {
 	const { customerID, staffID, date, time } = req.body;
 
-	// read mock data file
 	const extAppointments = JSON.parse(
 		fs.readFileSync(appointmentMockData, 'utf8')
 	);
 
-	// create appointment
+	// Check staff availability
+	if (!isStaffAvailable(staffID, date, time, extAppointments)) {
+		return res.status(400).json({
+			status: 'Failed',
+			message: 'Staff is not available at the selected time.',
+		});
+	}
+
 	const newAppointment = {
 		id: extAppointments.length + 1,
 		customerID,
@@ -30,16 +44,13 @@ router.post('/bookAppointment', (req, res) => {
 		status: 'Pending',
 	};
 
-	// add new appointment to existing appointments
 	extAppointments.push(newAppointment);
 
-	// write and update to mock data file
 	fs.writeFileSync(
 		appointmentMockData,
 		JSON.stringify(extAppointments, null, 2)
 	);
 
-	// response
 	res.json({
 		status: 'Appointment Confirmed',
 		appointmentID: newAppointment.id,
@@ -50,31 +61,25 @@ router.put('/updateAppointmentStatus/:id', (req, res) => {
 	const { id } = req.params;
 	const { status } = req.body;
 
-	// Read the existing appointments from the mock data file
 	const extAppointments = JSON.parse(
 		fs.readFileSync(appointmentMockData, 'utf8')
 	);
 
-	// Find the appointment with the given ID
 	const appointmentIndex = extAppointments.findIndex(
 		(appointment) => appointment.id === parseInt(id)
 	);
 
-	// If appointment not found, return an error
 	if (appointmentIndex === -1) {
 		return res.status(404).json({ status: 'Appointment not found' });
 	}
 
-	// Update the status of the found appointment
 	extAppointments[appointmentIndex].status = status;
 
-	// Write the updated appointments back to the mock data file
 	fs.writeFileSync(
 		appointmentMockData,
 		JSON.stringify(extAppointments, null, 2)
 	);
 
-	// Respond with a confirmation
 	res.json({
 		status: 'Appointment status updated',
 		updatedAppointment: extAppointments[appointmentIndex],
