@@ -19,26 +19,30 @@ app.use(express.json());
 require('./src/auth/JwtStrategy')(passport); // Importing JWT strategy
 app.use(passport.initialize());
 
-// Import and register the User model
-const User = require('./src/models/User');
-
 // Import and use routes
 const customerRoutes = require('./src/routes/CustomerRoutes');
 const staffRoutes = require('./src/routes/StaffRoutes');
 const adminRoutes = require('./src/routes/AdminRoutes');
-const authRoutes = require('./src/routes/AuthRoutes'); // Importing authentication routes
+const authRoutes = require('./src/routes/AuthRoutes');
+const serviceRoutes = require('./src/routes/ServiceRoutes'); // Import the Service routes
+const appointmentRoutes = require('./src/routes/AppointmentRoutes'); // Import the Appointment routes
 
 app.use('/api/customers', customerRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/api/admin', adminRoutes);
-app.use('/api/auth', authRoutes); // Using authentication routes
+app.use('/api/auth', authRoutes);
+app.use('/api/services', serviceRoutes); // Use the Service routes
+app.use('/api/appointments', appointmentRoutes); // Use the Appointment routes
 
 // Connect to MongoDB
 mongoose
-	.connect('mongodb://localhost:27017/elevated_spa', {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	})
+	.connect(
+		process.env.MONGODB_URI || 'mongodb://localhost:27017/elevated_spa',
+		{
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		}
+	)
 	.then(() => {
 		console.log('Connected to MongoDB');
 	})
