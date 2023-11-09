@@ -1,6 +1,6 @@
 const Service = require('../models/Service');
 
-// Add the searchServices function with autofill logic
+// searchServices function with autofill logic
 exports.searchServices = async (req, res) => {
 	try {
 		const { name, type } = req.query;
